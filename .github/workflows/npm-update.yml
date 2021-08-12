@@ -27,9 +27,6 @@ jobs:
     - name: list outdated
       run: |
         OUTDATED=$(npm outdated)
-        OUTDATED="${OUTDATED//'%'/'%25'}"
-        OUTDATED="${OUTDATED//'\n'/'%0A'}"
-        OUTDATED="${OUTDATED//'\r'/'%0D'}"
         echo "::set-output name=OUTDATED::$OUTDATED"
       id: check
 
