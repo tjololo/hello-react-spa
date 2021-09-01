@@ -17,6 +17,7 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
+        if: steps.update.outputs.updated == 'true'
         with:
           title: "Updated npm dependencies"
           body: ${{ steps.update.outputs.body }}
